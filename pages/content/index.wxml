@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <!--view class="wxSearch-section">
+    <view class="wxSearch-pancel">
+      <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜索" />
+      <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+    </view>
+  </view-->
+
+  <view class="type-container">
+    <scroll-view class="type-navbar" scroll-x="true" >
+      <view class="type-box" wx:for-items="{{categories}}" wx:key="id">
+      
+        <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+        <image class='type-icon' mode="aspectFill"  src="{{item.icon}}"></image>
+        <text class='type-text'>{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="cms-container">
+    <view class="cms-box" wx:for-items="{{goods}}" wx:key="{{index}}" bindtap="toDetailsTap" data-id="{{item.id}}">
+    <view class="cms-title">{{item.title}}</view>
+      <view class="cms-pic">
+              <image src="{{item.pic}}_m" class="img" mode="aspectFill" lazy-load="true"/>
+           </view>
+           <view class='cms-views'>浏览量：{{item.views}}</view>
+    </view>
+  </view>
+  <view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">没有更多啦</view>
+</view>

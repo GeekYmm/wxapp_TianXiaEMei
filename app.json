@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index2/index",
+    "pages/mail/mail",
+    "pages/index/index",
+    "pages/listDetail/listDetail",
+    "pages/mine/mine",
+    "pages/advise/advise",
+    "pages/index1/index1",
+    "pages/write/write",
+    "pages/newList/newList",
+    "pages/protocol/protocol",
+    "pages/goods-details/index",
+    "pages/shop-cart/index",
+    "pages/to-pay-order/index",
+    "pages/select-address/index",
+    "pages/address-add/index",
+    "pages/order-list/index",
+    "pages/order-details/index",
+    "pages/wuliu/index",
+    "pages/my/index",
+    "pages/notice/show",
+    "pages/cms/index",
+    "pages/content/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#009933",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#FAFAFA",
+    "borderStyle": "white",
+    "color": "#b2b2b2",
+    "selectedColor": "#1e1e1e",
+    "list": [
+      {
+        "pagePath": "pages/index2/index",
+        "iconPath": "images/nav/sy1.png",
+        "selectedIconPath": "images/nav/sy2.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/mail/mail",
+        "selectedIconPath": "images/nav/yq2.png",
+        "iconPath": "images/nav/yq1.png",
+        "text": "友圈"
+      },
+      {
+        "pagePath": "pages/content/index",
+        "iconPath": "images/nav/qs1.png",
+        "selectedIconPath": "images/nav/qs2.png",
+        "text": "犬舍"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav/jy1.png",
+        "selectedIconPath": "images/nav/jy2.png",
+        "text": "交易"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "selectedIconPath": "images/nav/wd2.png",
+        "iconPath": "images/nav/wd1.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

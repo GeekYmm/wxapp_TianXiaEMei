@@ -1,0 +1,15 @@
+page {
+  font-size: 14px;
+  color: #646464;
+  background: #fff;
+  font-family: "黑体";
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}

@@ -1,0 +1,66 @@
+<loading hidden="{{isload}}">
+  加载中...
+</loading>
+<import src="../template/list.wxml" />
+<view class="func-types">
+  <view bindtap="showDogsType" data-tag="-1">
+    <image src="../../images/img_all.png" mode="aspectFill" />
+    <text>全部</text>
+  </view>
+  <view bindtap="showDogsType" data-tag="0">
+    <image src="../../images/img_lbld.png" mode="aspectFill" />
+    <text>拉布拉多</text>
+  </view>
+  <view bindtap="showDogsType" data-tag="1">
+    <image src="../../images/img_dnq.png" mode="aspectFill" />
+    <text>斗牛犬</text>
+  </view>
+  <view bindtap="showDogsType"data-tag="2">
+    <image src="../../images/img_ksl.png" mode="aspectFill" />
+    <text>卡斯罗</text>
+  </view>
+  <view bindtap="showDogsType" data-tag="3">
+    <image src="../../images/img_kj.png" mode="aspectFill" />
+    <text>柯基</text>
+  </view>
+  <view bindtap="showDogsType" data-tag="4">
+    <image src="../../images/img_cq.png" mode="aspectFill" />
+    <text>柴犬</text>
+  </view>
+
+</view>
+<view class="index_list">
+
+  <navigator url="../listDetail/listDetail?moodId={{item.id}}" hover-class="navigator-hover" wx:for-items="{{moodList}}" wx:key="moodListId" wx:if="{{item.id}}">
+
+    <template is="listHeader" data="{{userPic:item.avatar,userNick:item.username,publishTime:item.created_at}}" />
+        <view class='template_view'>
+    <view   class='index_text'wx:if="{{item.x>3}}">+{{item.x-3}}</view>
+     <template is="listTemp" data="{{listTitle:item.title,listContent:item.content,listPic:item.attachment,listPic1:item.attachment1,listPic2:item.attachment2,listPic3:item.attachment3,listPic4:item.attachment4,listPic5:item.attachment5,listPic6:item.attachment6,listPic7:item.attachment7,listPic8:item.attachment8}}" /></view>
+   
+    <view class="list_footer">
+      <view class="agreeNum agree_{{item.is_liked}}">{{item.likes}}</view>
+      <view class="commNum">{{item.comments}}</view>
+    </view>
+
+  </navigator>
+</view>
+
+
+
+<view class="bord"></view>
+
+
+<view class="returnTop" wx:if="{{scrollTop.goTop_show}}" catchtap="goTopFun">
+</view>
+
+<view class="weui-loadmore" hidden="{{isload}}">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips"></view>
+</view>
+<view class="weui-loadmore weui-loadmore_line" hidden="{{isEmpty}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line"></view>
+</view>
+
+<navigator class="toWrite" url="../write/write">
+</navigator>

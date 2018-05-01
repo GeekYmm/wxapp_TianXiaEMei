@@ -1,0 +1,36 @@
+<!--pages/cms/index.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="notice">
+  <view class="title">{{notice.title}}</view>
+  <view class="text">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+
+    <view class="comment_list" wx-if="{{commentList.length>0}}">
+
+      <view class="list" wx:for="{{commentList}}" wx:key="commentId" data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}">
+
+        <view class="list_header" data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}">
+          <view class="list_header_left" data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}">
+            <image mode="aspectFill" src="{{item.commentUserInfo.avatarUrl}}" wx:if="{{item.commentUserInfo.avatarUrl}}" data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}"></image>
+            <view data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}">{{item.commentUserInfo.nick}}</view>
+          </view>
+          <view class="list_header_right" data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}">{{item.dateAdd}}</view>
+        </view>
+        <view class="comment_content" data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}">
+          <view wx:if="{{item.pid!=0}}" class="response_comment" data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}">
+           </view>
+
+          <text wx:else data-commentId="{{item.id}}" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.commentUserInfo.nickName}}">{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="toComment" wx:if="{{!isToResponse&&isComment}}">
+    <form bindsubmit="publishComment1" >
+      <input placeholder="评论：" name="commContent" bindinput="bindKeyInput" value="{{publishContent}}" focus="{{autoFo}}" bindfocus="changeFocus" />
+      <button class="default" formType="submit" disabled="{{isdisabled}}" loading="{{commentLoading}}">发送</button>
+    </form>
+  </view>
+
+</view>

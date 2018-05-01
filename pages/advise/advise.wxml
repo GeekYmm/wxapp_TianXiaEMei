@@ -1,0 +1,4 @@
+<form bindsubmit="formSubmit">
+  <textarea placeholder="请您留言并写下联系方式，我们将尽快回复" auto-focus maxlength="0" placeholder-style="color:#b2b2b2;" name="advise" />
+  <button formType="submit" class="form_submit" loading="{{isLoading}}" disabled="{{isdisabled}}">提交</button>
+</form>

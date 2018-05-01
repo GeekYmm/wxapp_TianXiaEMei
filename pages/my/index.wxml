@@ -1,0 +1,42 @@
+<view class="container">
+
+	<view class="userinfo">
+		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+	</view> 
+
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+
+  <view class="my-item">
+    <navigator url="/pages/advise/advise" hover-class="navigator-hover">我的留言</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/index1/index1" hover-class="navigator-hover">我的发布</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/newList/newList" hover-class="navigator-hover">我的消息</navigator>
+  </view>
+
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+
+  <view class="my-item">
+    <navigator url="/pages/order-list/index" hover-class="navigator-hover">我的订单</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/shop-cart/index" hover-class="navigator-hover">我的购物车</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/select-address/index" hover-class="navigator-hover">收货地址</navigator>
+  </view>
+  <view class="my-item">
+    <navigator bindtap="kefu">联系客服</navigator>
+  </view>
+
+  <view class="my-log" style="border:none;padding:0rpx;margin:0rpx;background:none;border:none;height:auto;line-height:auto;">
+    <button type="warn" bindtap="relogin">重新登录</button>
+  </view>
+  
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+</view>

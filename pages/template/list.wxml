@@ -1,0 +1,27 @@
+//公用模版
+<template name="listTemp">
+<view class="listTitle" wx-if="{{listTitle!=''}}">{{listTitle}}</view>
+    <view class="listContent"><text>{{listContent}}</text></view>
+    <image  mode="aspectFill" src="{{listPic}}" class="listPic" wx:if="{{listPic}}" bindtap="seeBig"></image>
+    <image  mode="aspectFill" src="{{listPic1}}" class="listPic" wx:if="{{listPic1}}" bindtap="seeBig1"></image>
+    <image  mode="aspectFill" src="{{listPic2}}" class="listPic2" wx:if="{{listPic2}}" bindtap="seeBig2"></image>
+<!--0~2-->
+<image  mode="aspectFill" src="{{listPic3}}" class="listPic3" wx:if="{{listPic3}}" bindtap="seeBig3"></image>
+    <image  mode="aspectFill" src="{{listPic4}}" class="listPic3" wx:if="{{listPic4}}" bindtap="seeBig4"></image>
+    <image  mode="aspectFill" src="{{listPic5}}" class="listPic3" wx:if="{{listPic5}}" bindtap="seeBig5"></image>
+<!--3~5-->
+<image  mode="aspectFill" src="{{listPic6}}" class="listPic3" wx:if="{{listPic6}}" bindtap="seeBig6"></image>
+    <image  mode="aspectFill" src="{{listPic7}}" class="listPic3" wx:if="{{listPic7}}" bindtap="seeBig7"></image>
+    <image  mode="aspectFill" src="{{listPic8}}" class="listPic3" wx:if="{{listPic8}}" bindtap="seeBig8"></image>
+<!--6~8-->
+</template>
+
+<template name="listHeader">
+    <view class="list_header">
+        <view class="list_header_left">
+            <image  mode="aspectFill" src="{{userPic}}" wx:if="userPic"></image>
+            <view>{{userNick}}</view>
+        </view>
+        <view class="list_header_right">{{publishTime}}</view>
+    </view>
+</template>

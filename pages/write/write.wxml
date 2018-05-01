@@ -1,0 +1,31 @@
+<loading hidden="{{loading}}">
+  页面初始化中...
+</loading>
+
+<form bindsubmit="sendNewMood">
+
+ <input placeholder="文章标题:" class="add_title" value="" bindinput="setTitle" name="title" />
+   <view style="height:3rpx;background: #eee;width:100%;"></view>
+  <view class="addConent">
+    <textarea placeholder="文章内容:" maxlength="1000" value="" name="content" />
+  </view>
+   <view style="height:5rpx;background: #eee;width:100%;"></view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker"  >
+     <text value="dogs_type" > 狗狗类型:{{array[index]}}</text>
+    </view>
+  </picker>
+   <view style="height:5rpx;background: #eee;width:100%;"></view>
+   <view class='buttons-pic'>
+       <button class="add_pic"plain="true" bindtap="upImg" wx-if="{{!isSrc}}">添加图片</button>
+              <button class='clearPic' bindtap="clearPic" plain="true" >清空所选图片</button>
+   </view>
+
+    <view class="image_box" wx:for="{{imageList}}"wx:for-item="image">
+        <view  class="picPre">
+            <image src="{{image}}"  mode="aspectFill"></image>
+        </view>
+    </view>
+   <view style="height:5rpx;background: #eee;width:100%;"></view>
+      <button class='button-fb' loading="{{isLoading}}" hover-start-time="200" disabled="{{isdisabled}}" formType="submit">发布</button>
+</form>

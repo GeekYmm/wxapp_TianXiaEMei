@@ -1,0 +1,15 @@
+/* pages/cms/index.wxss */
+@import "../listDetail/listDetail.wxss";
+.notice {
+  background: #fff;
+  width: 98.5%;
+  padding-top: 2.5%;
+  padding-left: 1%;
+  font-size: 30rpx;
+}
+.title {
+  background: #fff;
+  color:chocolate;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
